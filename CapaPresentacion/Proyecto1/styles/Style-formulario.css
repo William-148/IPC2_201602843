@@ -1,0 +1,63 @@
+﻿body {
+
+
+}
+
+.tableUsuarios {
+    padding-left: 40px;
+
+}
+
+.tableArtistasE {
+    padding-left: 80px;
+}
+
+.tableAlbumesE {
+    padding-left: 50px;
+}
+
+.tableGenero {
+    padding-left: 22%;
+}
+
+.tableCancionE{
+    padding-left: 13%;
+}
+
+
+table{
+    padding-left: 5%;
+}
+
+
+
+.titulo {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: azure;
+    background-color: darkslategrey;
+}
+
+.piepagina {
+    padding-top: 20px;
+    
+}
+
+.columna {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.formulario-descripcion{
+    height: 100px;
+    width: 100px;
+}
+
+.botonAlbum {
+
+    height: 30px;
+    width: 100px;
+}

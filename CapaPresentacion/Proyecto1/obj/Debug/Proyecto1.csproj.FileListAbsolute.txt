@@ -1,0 +1,39 @@
+C:\Users\William\Desktop\[IPC2]Proyecto fase2\Proyecto1\Proyecto1\bin\Proyecto1.dll.config
+C:\Users\William\Desktop\[IPC2]Proyecto fase2\Proyecto1\Proyecto1\bin\Proyecto1.dll
+C:\Users\William\Desktop\[IPC2]Proyecto fase2\Proyecto1\Proyecto1\bin\Proyecto1.pdb
+C:\Users\William\Desktop\[IPC2]Proyecto fase2\Proyecto1\Proyecto1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\William\Desktop\[IPC2]Proyecto fase2\Proyecto1\Proyecto1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\William\Desktop\[IPC2]Proyecto fase2\Proyecto1\Proyecto1\obj\Debug\Proyecto1.csprojResolveAssemblyReference.cache
+C:\Users\William\Desktop\[IPC2]Proyecto fase2\Proyecto1\Proyecto1\obj\Debug\Proyecto1.csproj.CoreCompileInputs.cache
+C:\Users\William\Desktop\[IPC2]Proyecto fase2\Proyecto1\Proyecto1\obj\Debug\Proyecto1.dll
+C:\Users\William\Desktop\[IPC2]Proyecto fase2\Proyecto1\Proyecto1\obj\Debug\Proyecto1.pdb
+C:\Users\William\Desktop\[IPC2]Proyecto fase2\Proyecto1\Proyecto1\bin\Entidades.dll
+C:\Users\William\Desktop\[IPC2]Proyecto fase2\Proyecto1\Proyecto1\bin\LogicaNegocio.dll
+C:\Users\William\Desktop\[IPC2]Proyecto fase2\Proyecto1\Proyecto1\bin\AccesoDatos.dll
+C:\Users\William\Desktop\[IPC2]Proyecto fase2\Proyecto1\Proyecto1\bin\Entidades.pdb
+C:\Users\William\Desktop\[IPC2]Proyecto fase2\Proyecto1\Proyecto1\bin\LogicaNegocio.pdb
+C:\Users\William\Desktop\[IPC2]Proyecto fase2\Proyecto1\Proyecto1\bin\AccesoDatos.pdb
+C:\Users\William\Desktop\[IPC2]Fase2_201602843\Proyecto1\Proyecto1\bin\Proyecto1.dll.config
+C:\Users\William\Desktop\[IPC2]Fase2_201602843\Proyecto1\Proyecto1\bin\Proyecto1.dll
+C:\Users\William\Desktop\[IPC2]Fase2_201602843\Proyecto1\Proyecto1\bin\Proyecto1.pdb
+C:\Users\William\Desktop\[IPC2]Fase2_201602843\Proyecto1\Proyecto1\bin\Entidades.dll
+C:\Users\William\Desktop\[IPC2]Fase2_201602843\Proyecto1\Proyecto1\bin\LogicaNegocio.dll
+C:\Users\William\Desktop\[IPC2]Fase2_201602843\Proyecto1\Proyecto1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\William\Desktop\[IPC2]Fase2_201602843\Proyecto1\Proyecto1\bin\AccesoDatos.dll
+C:\Users\William\Desktop\[IPC2]Fase2_201602843\Proyecto1\Proyecto1\bin\Entidades.pdb
+C:\Users\William\Desktop\[IPC2]Fase2_201602843\Proyecto1\Proyecto1\bin\LogicaNegocio.pdb
+C:\Users\William\Desktop\[IPC2]Fase2_201602843\Proyecto1\Proyecto1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\William\Desktop\[IPC2]Fase2_201602843\Proyecto1\Proyecto1\bin\AccesoDatos.pdb
+C:\Users\William\Desktop\[IPC2]Fase2_201602843\Proyecto1\Proyecto1\obj\Debug\Proyecto1.csprojResolveAssemblyReference.cache
+C:\Users\William\Desktop\[IPC2]Fase2_201602843\Proyecto1\Proyecto1\obj\Debug\Proyecto1.csproj.CoreCompileInputs.cache
+C:\Users\William\Desktop\[IPC2]Fase2_201602843\Proyecto1\Proyecto1\obj\Debug\Proyecto1.dll
+C:\Users\William\Desktop\[IPC2]Fase2_201602843\Proyecto1\Proyecto1\obj\Debug\Proyecto1.pdb
+C:\Users\William\Desktop\[IPC2]Proyecto\Proyecto1\Proyecto1\bin\Proyecto1.dll.config
+C:\Users\William\Desktop\[IPC2]Proyecto\Proyecto1\Proyecto1\bin\Proyecto1.dll
+C:\Users\William\Desktop\[IPC2]Proyecto\Proyecto1\Proyecto1\bin\Proyecto1.pdb
+C:\Users\William\Desktop\[IPC2]Proyecto\Proyecto1\Proyecto1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\William\Desktop\[IPC2]Proyecto\Proyecto1\Proyecto1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\William\Desktop\[IPC2]Proyecto\Proyecto1\Proyecto1\obj\Debug\Proyecto1.csprojResolveAssemblyReference.cache
+C:\Users\William\Desktop\[IPC2]Proyecto\Proyecto1\Proyecto1\obj\Debug\Proyecto1.csproj.CoreCompileInputs.cache
+C:\Users\William\Desktop\[IPC2]Proyecto\Proyecto1\Proyecto1\obj\Debug\Proyecto1.dll
+C:\Users\William\Desktop\[IPC2]Proyecto\Proyecto1\Proyecto1\obj\Debug\Proyecto1.pdb

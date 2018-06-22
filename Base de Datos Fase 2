@@ -1,0 +1,386 @@
+
+--Creando la base de datos
+--CREATE DATABASE sistemaERP;
+
+--Creando Tablas
+
+--Modulo USUARIOS Y SERVICIOS------------------------------------------------------------------------	
+CREATE TABLE cuenta(
+	idCuenta serial primary key not null,
+	nombre varchar(45) not null,
+	nombreusuario varchar(45) not null,
+	email varchar(45) not null,
+	clave varchar(15) not null,
+	tipo int not null,
+	cantidadUsuarios int not null,
+	costoTotalServicios int not null,
+	numeroTarjeta int,
+	expiracionTarjeta date,
+	seguridadTarjeta int
+);
+
+CREATE TABLE servicio(
+	idServicio SERIAL PRIMARY KEY not null,
+	nombre varchar(25) not null,
+	precioUnitario int not null,
+	precioMensual int not null,
+	precioAnual int not null,
+	estado int not null,
+	mensaje varchar(50)
+);
+
+CREATE TABLE servicioAdquirido(
+	idCuenta int not null,
+	idServicio int not null,
+	tipoPago int not null,
+	costo int not null,
+	fechaExpiracion date not null,
+	
+	--Relacionando tabla servicioAdquirido con cuenta y servicio
+	CONSTRAINT FK_SERVICIOADQUIRIDO_CUENTA
+	FOREIGN KEY (idCuenta) REFERENCES cuenta(idCuenta) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_SERVICIOADQUIRIDO_SERVICIO
+	FOREIGN KEY (idServicio) REFERENCES servicio(idServicio) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE administrador_usuario(
+	idAdministrador int not null,
+	idUsuario int not null,
+	
+	--Relacionano tablas
+	CONSTRAINT FK_AdministradorUsuario_CUENTA
+	FOREIGN KEY (idAdministrador) REFERENCES cuenta(idCuenta) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_AdministradorUsuario_cuenta1
+	FOREIGN KEY (idUsuario) REFERENCES cuenta(idCuenta) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+--MODULO POR DEFECTO------------------------------------------------------------------------	
+
+CREATE TABLE proveedor(
+	idproveedor SERIAL PRIMARY KEY NOT NULL,
+	nombre varchar(30) NOT NULL,
+	direccion varchar(45) NOT NULL,
+	telefono int NOT NULL,
+	email varchar(45) NOT NULL,
+	idCuenta int NOT NULL,
+	--Relacionano tablas
+	CONSTRAINT FK_PROVEEDOR_CUENTA
+	FOREIGN KEY (idCuenta) REFERENCES cuenta(idCuenta) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE cliente(
+	idcliente SERIAL PRIMARY KEY NOT NULL,
+	nombre varchar(30)NOT NULL,
+	dpi int NOT NULL,
+	direccion varchar(45) NOT NULL,
+	nit int NOT NULL,
+	telefono int NOT NULL,
+	email varchar(45) ,
+	idCuenta int  ,
+	--Relacionano tablas
+	CONSTRAINT FK_CLIENTE_CUENTA
+	FOREIGN KEY (idCuenta) REFERENCES cuenta(idCuenta) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+--MODULO GESTION DE INVENTARIO------------------------------------------------------------------------	
+
+CREATE TABLE producto(
+	idproducto SERIAL PRIMARY KEY NOT NULL,
+	nombre varchar(30)NOT NULL,
+	precio int NOT NULL,
+	cantidadDisponible int,
+	cantidadMaxima int ,
+	cantidadMinima int ,
+	descripcion varchar(100),
+	idproveedor int  NOT NULL,
+	idcuenta int NOT NULL,
+	--Relacionano tablas
+	CONSTRAINT FK_PRODUCTO_PROVEEDOR
+	FOREIGN KEY (idproveedor) REFERENCES proveedor(idproveedor) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_producto_CUENTA
+	FOREIGN KEY (idcuenta) REFERENCES cuenta(idCuenta) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE materiaPrima(
+	idMateriaPrima SERIAL PRIMARY KEY NOT NULL,
+	nombre varchar(30)NOT NULL,
+	precio int NOT NULL,
+	descripcion varchar(100)
+);
+
+CREATE TABLE detalle(
+	idMateriaPrima int NOT NULL,
+	idproducto int NOT NULL,
+	producto_idCuenta int NOT NULL,
+	cantidad int NOT NULL,
+	--Relacionano tablas
+	CONSTRAINT FK_DETALLE_PRODUCTO
+	FOREIGN KEY (idproducto) REFERENCES producto(idproducto) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_Detalle_MATERIAPRIMA
+	FOREIGN KEY (idMateriaPrima) REFERENCES materiaPrima(idMateriaPrima) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_DETALLE_PRODUCTOCUENTA
+	FOREIGN KEY (producto_idCuenta) REFERENCES cuenta(idcuenta) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+--MODULO GESTION DE COMPRAS------------------------------------------------------------------------	
+
+CREATE TABLE compra(
+	idcompra SERIAL PRIMARY KEY NOT NULL,
+	fechapedido date NOT NULL,
+	fecharecibido date NOT NULL,
+	factura int NOT NULL,
+	impuesto int NOT NULL,
+	subtotal int NOT NULL,
+	total int NOT NULL,
+	idproveedor int NOT NULL,
+	idCuenta int NOT NULL,
+	--Relacionano tablas
+	CONSTRAINT FK_COMPRA_PROVEEDOR
+	FOREIGN KEY (idproveedor) REFERENCES proveedor(idproveedor) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_COMPRA_CUENTA
+	FOREIGN KEY (idCuenta) REFERENCES cuenta(idCuenta) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+--MODULO GESTION DE VENTAS------------------------------------------------------------------------	
+
+CREATE TABLE venta(
+	idventa SERIAL PRIMARY KEY NOT NULL,
+	idvendedor int NOT NULL,--revisar
+	nombrevendedor varchar(30) NOT NULL,--revisar
+	total int NOT NULL,
+	fecha date NOT NULL,
+	impuesto int NOT NULL,
+	totalneto int NOT NULL
+);
+
+CREATE TABLE detalleventa(
+	idventa int NULL,
+	idproducto int NOT NULL,
+	idCuenta int NOT NULL,
+	cantidad int NOT NULL,
+	precio int NOT NULL,
+	--Relacionano tablas
+	CONSTRAINT FK_DETALLEVENTA_VENTA
+	FOREIGN KEY (idventa) REFERENCES venta(idventa) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_DETALLEVENTA_PRODUCTO
+	FOREIGN KEY (idproducto) REFERENCES producto(idproducto) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_DETALLEVENTA_CUENTA
+	FOREIGN KEY (idCuenta) REFERENCES cuenta(idCuenta) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+--MODULO FACTURACION------------------------------------------------------------------------	
+
+CREATE TABLE factura(
+	idfactura SERIAL PRIMARY KEY NOT NULL,
+	numero int NOT NULL,
+	fecha date NOT NULL,
+	hora time NOT NULL,
+	impuesto int NOT NULL,
+	total int NOT NULL,
+	idvendedor int NOT NULL, --revisar
+	nombreVendedor varchar(30),  --revisar
+	idcliente int not null,
+	idcuenta int not null,
+	
+	CONSTRAINT FK_FACTURA_CLIENTE	
+	FOREIGN KEY (idcliente) REFERENCES cliente(idcliente) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_FACTURA_CUENTA	
+	FOREIGN KEY (idcuenta) REFERENCES cuenta(idcuenta) ON DELETE CASCADE ON UPDATE CASCADE
+); 
+
+CREATE TABLE detallefactura(
+	idfactura int NOT NULL,
+	idproducto int NOT NULL,
+	idcuenta int NOT NULL,
+	cantidad int NOT NULL,
+	precio int NOT NULL,
+	
+	CONSTRAINT FK_DETALLEFACTURA_FACTURA	
+	FOREIGN KEY (idfactura) REFERENCES factura(idfactura) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_DETALLEFACTURA_PRODUCTO		
+	FOREIGN KEY (idproducto) REFERENCES producto(idproducto) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_DETALLEFACTURA_CUENTA		
+	FOREIGN KEY (idcuenta) REFERENCES cuenta(idcuenta) ON DELETE CASCADE ON UPDATE CASCADE
+); 
+
+--MODULO RECLUTAMIENTO------------------------------------------------------------------------	
+CREATE TABLE empleado(
+	idempleado SERIAL PRIMARY KEY NOT NULL,
+	nombre  varchar(40) NOT NULL,
+	CUI int NOT NULL,
+	direccion varchar(45) NOT NULL,
+	FechaNacimiento date NOT NULL,
+	Email varchar(40) NOT NULL,
+	telefono int NOT NULL, 
+	idcuenta int not null,
+	
+	CONSTRAINT FK_EMPLEADO_CUENTA	
+	FOREIGN KEY (idcuenta) REFERENCES cuenta(idcuenta) ON DELETE CASCADE ON UPDATE CASCADE
+); 
+
+CREATE TABLE puesto(
+	idpuesto SERIAL PRIMARY KEY NOT NULL,
+	nombre  varchar(40) NOT NULL,
+	descripcion varchar(200),
+	idcuenta int not null,
+	
+	CONSTRAINT FK_PUESTO_CUENTA	
+	FOREIGN KEY (idcuenta) REFERENCES cuenta(idcuenta) ON DELETE CASCADE ON UPDATE CASCADE
+); 
+
+
+CREATE TABLE entrevista(
+	identrevista SERIAL PRIMARY KEY NOT NULL,
+	Entrevistado  varchar(40) NOT NULL,
+	Fecha date NOT NULL,
+	Hora time not null,
+	idPuesto int not null,
+	idCuenta int not null,
+	
+	CONSTRAINT FK_ENTREVISTA_PUESTO
+	FOREIGN KEY (idPuesto) REFERENCES puesto(idPuesto) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_ENTREVISTA_CUENTA	
+	FOREIGN KEY (idCuenta) REFERENCES cuenta(idcuenta) ON DELETE CASCADE ON UPDATE CASCADE
+); 
+
+CREATE TABLE empleado_puesto(
+	idempleado int NOT NULL,
+	idpuesto  int NOT NULL,
+	idcuenta int NOT NULL,
+	
+	CONSTRAINT FK_EMPLEADOPUESTO_EMPLEADO
+	FOREIGN KEY (idempleado) REFERENCES empleado(idempleado) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_EMPLEADOPUESTO_PUESTO
+	FOREIGN KEY (idpuesto) REFERENCES puesto(idPuesto) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_EMPLEADOPUESTO_CUENTA	
+	FOREIGN KEY (idCuenta) REFERENCES cuenta(idcuenta) ON DELETE CASCADE ON UPDATE CASCADE
+); 
+
+--MODULO GESTION DE FLOTAS------------------------------------------------------------------------
+
+
+CREATE TABLE viaje(
+	idviaje SERIAL PRIMARY KEY NOT NULL,
+	fechaSalida  date NOT NULL,
+	fechallegada date NOT NULL,
+	distancia time not null
+); 
+
+CREATE TABLE vehiculo(
+	idvehiculo SERIAL PRIMARY KEY NOT NULL,
+	matricula  varchar(15) NOT NULL,
+	marca varchar(30) NOT NULL,
+	capacidad int NOT NULL,
+	idcuenta int not null,
+	
+	CONSTRAINT FK_VEHICULO_CUENTA	
+	FOREIGN KEY (idCuenta) REFERENCES cuenta(idcuenta) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE encargado(
+	idencargado SERIAL PRIMARY KEY NOT NULL,
+	nombre  varchar(15) NOT NULL,
+	telefono int NOT NULL,
+	rol int NOT NULL,
+	idvehiculo int not NULL,
+	idcuenta int not null,
+	
+	CONSTRAINT FK_ENCARGADO_VEHICULO	
+	FOREIGN KEY (idvehiculo) REFERENCES vehiculo(idvehiculo) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_ENCARGADO_CUENTA	
+	FOREIGN KEY (idCuenta) REFERENCES cuenta(idcuenta) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE detalleviaje(
+	idviaje int NOT NULL,
+	idproducto  int NOT NULL,
+	idvehiculo int NOT NULL,
+	idcuenta int NOT NULL,
+	cantidad int not NULL,
+	
+	CONSTRAINT FK_DETALLEVIAJE_VIAJE	
+	FOREIGN KEY (idviaje) REFERENCES viaje(idviaje) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_DETALLEVIAJE_PRODUCTO	
+	FOREIGN KEY (idproducto) REFERENCES producto(idproducto) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_DETALLEVIAJE_VEHICULO	
+	FOREIGN KEY (idvehiculo) REFERENCES vehiculo(idvehiculo) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_DETALLEVIAJE_CUENTA	
+	FOREIGN KEY (idCuenta) REFERENCES cuenta(idcuenta) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+--MODULO BLOG------------------------------------------------------------------------
+CREATE TABLE publicacion(
+	idpublicacion SERIAL PRIMARY KEY NOT NULL,
+	Mensaje  varchar(300) NOT NULL,
+	idcuenta int not null,
+	
+	CONSTRAINT FK_PUBLICACION_CUENTA	
+	FOREIGN KEY (idCuenta) REFERENCES cuenta(idcuenta) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE comentario(
+	idcomentario SERIAL PRIMARY KEY NOT NULL,
+	mensaje  varchar(300) NOT NULL,
+	idpublicacion int not null,
+	idcuenta int not null,
+	
+	CONSTRAINT FK_COMENTARIO_PUBLICACION
+	FOREIGN KEY (idpublicacion) REFERENCES publicacion(idpublicacion) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_COMENTARIO_CUENTA
+	FOREIGN KEY (idCuenta) REFERENCES cuenta(idcuenta) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+--MODULO EVENTOS------------------------------------------------------------------------
+CREATE TABLE evento(
+	idevento SERIAL PRIMARY KEY NOT NULL,
+	descripcion  varchar(300) NOT NULL,
+	fecha date not null,
+	hora time not null,
+	lugar varchar(30) not null,
+	estado int not null,
+	idcuenta int not null,
+	
+	CONSTRAINT FK_EVENTO_CUENTA
+	FOREIGN KEY (idcuenta) REFERENCES cuenta(idcuenta) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+--MODULO <<CRM>>------------------------------------------------------------------------
+CREATE TABLE oportunidadNegocio(
+	idoportunidadNegocio SERIAL PRIMARY KEY NOT NULL,
+	titulo  varchar(30) NOT NULL,
+	ingreso int not null,
+	prioridad varchar(30) not null,
+	idcliente int not null,
+	idcuenta int not null,
+	
+	CONSTRAINT FK_OPORTUNIDADNEGOCIO_CLIENTE
+	FOREIGN KEY (idcliente) REFERENCES cliente(idcliente) ON DELETE CASCADE ON UPDATE CASCADE,
+	
+	CONSTRAINT FK_OPORTUNIDADNEGOCIO_CUENTA
+	FOREIGN KEY (idcuenta) REFERENCES cuenta(idcuenta) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+--FINAL QUERY BASE DE DATOS PROYECTO FASE 2
+--Insert into cuenta (nombre, email) values ('William', 'wilenrike@gmail.com')
+
+

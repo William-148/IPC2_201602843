@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://Servicio/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="GestionAplicacion" targetNamespace="http://Servicio/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/Servicios/GestionAplicacion?xsd=1" namespace="http://Servicio/" />
+    </xsd:schema>
+  </types>
+  <message name="Login">
+    <part name="parameters" element="tns:Login" />
+  </message>
+  <message name="LoginResponse">
+    <part name="parameters" element="tns:LoginResponse" />
+  </message>
+  <message name="Registrar">
+    <part name="parameters" element="tns:Registrar" />
+  </message>
+  <message name="RegistrarResponse">
+    <part name="parameters" element="tns:RegistrarResponse" />
+  </message>
+  <message name="CrearUsuario">
+    <part name="parameters" element="tns:CrearUsuario" />
+  </message>
+  <message name="CrearUsuarioResponse">
+    <part name="parameters" element="tns:CrearUsuarioResponse" />
+  </message>
+  <message name="ExisteUsuario">
+    <part name="parameters" element="tns:ExisteUsuario" />
+  </message>
+  <message name="ExisteUsuarioResponse">
+    <part name="parameters" element="tns:ExisteUsuarioResponse" />
+  </message>
+  <portType name="GestionAplicacion">
+    <operation name="Login">
+      <input wsam:Action="http://Servicio/GestionAplicacion/LoginRequest" message="tns:Login" />
+      <output wsam:Action="http://Servicio/GestionAplicacion/LoginResponse" message="tns:LoginResponse" />
+    </operation>
+    <operation name="Registrar">
+      <input wsam:Action="http://Servicio/GestionAplicacion/RegistrarRequest" message="tns:Registrar" />
+      <output wsam:Action="http://Servicio/GestionAplicacion/RegistrarResponse" message="tns:RegistrarResponse" />
+    </operation>
+    <operation name="CrearUsuario">
+      <input wsam:Action="http://Servicio/GestionAplicacion/CrearUsuarioRequest" message="tns:CrearUsuario" />
+      <output wsam:Action="http://Servicio/GestionAplicacion/CrearUsuarioResponse" message="tns:CrearUsuarioResponse" />
+    </operation>
+    <operation name="ExisteUsuario">
+      <input wsam:Action="http://Servicio/GestionAplicacion/ExisteUsuarioRequest" message="tns:ExisteUsuario" />
+      <output wsam:Action="http://Servicio/GestionAplicacion/ExisteUsuarioResponse" message="tns:ExisteUsuarioResponse" />
+    </operation>
+  </portType>
+  <binding name="GestionAplicacionPortBinding" type="tns:GestionAplicacion">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Login">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Registrar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CrearUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ExisteUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="GestionAplicacion">
+    <port name="GestionAplicacionPort" binding="tns:GestionAplicacionPortBinding">
+      <soap:address location="http://localhost:8080/Servicios/GestionAplicacion" />
+    </port>
+  </service>
+</definitions>

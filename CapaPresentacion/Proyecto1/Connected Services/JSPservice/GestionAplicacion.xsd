@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Servicio/" targetNamespace="http://Servicio/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CrearUsuario" type="tns:CrearUsuario" />
+  <xs:element name="CrearUsuarioResponse" type="tns:CrearUsuarioResponse" />
+  <xs:element name="ExisteUsuario" type="tns:ExisteUsuario" />
+  <xs:element name="ExisteUsuarioResponse" type="tns:ExisteUsuarioResponse" />
+  <xs:element name="Login" type="tns:Login" />
+  <xs:element name="LoginResponse" type="tns:LoginResponse" />
+  <xs:element name="Registrar" type="tns:Registrar" />
+  <xs:element name="RegistrarResponse" type="tns:RegistrarResponse" />
+  <xs:complexType name="Registrar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="clave" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RegistrarResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="clave" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExisteUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExisteUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Login">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="clave" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LoginResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:cuenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cuenta">
+    <xs:sequence>
+      <xs:element name="cantidadUsuarios" type="xs:int" />
+      <xs:element minOccurs="0" name="clave" type="xs:string" />
+      <xs:element name="costoTotalServicios" type="xs:int" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="expiracionTarjeta" type="xs:string" />
+      <xs:element name="idCuenta" type="xs:int" />
+      <xs:element name="idcuentaPadre" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="numeroTarjeta" type="xs:int" />
+      <xs:element name="seguridadTarjeta" type="xs:int" />
+      <xs:element name="tipo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

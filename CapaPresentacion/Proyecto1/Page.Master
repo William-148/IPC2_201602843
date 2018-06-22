@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Page.master.cs" Inherits="Proyecto1.Page1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=yes initial-scale=1, maximum-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+    <link href="styles/Style-Master.css" rel="stylesheet"/>
+    <link href="styles/Style-formulario.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet"/>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+        <div class="franja">
+            <h1>erp empresas</h1>
+            <div class="NombreUsuario">
+                 <span class="icon-user"></span><asp:Label text="" runat="server" ID="NombreUsuario"></asp:Label>                
+            </div>
+        </div>
+        <div class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href=""><span class="icon-users"></span><asp:Label CssClass="artistR" text="Clientes" runat="server" ID="Clientes" ForeColor="#E2E2E2"></asp:Label></a></li>
+                <li><a href=""><span class="icon-user-deleted"></span><asp:Label CssClass="artistR" text="Proveedores" runat="server" ID="Proveedores" ForeColor="#E2E2E2"></asp:Label></a></li>
+                <li><a href=""><span class="icon-file-play"></span><asp:Label CssClass="artistR" text="Inventario" runat="server" ID="Inventario" ForeColor="#E2E2E2"></asp:Label></a></li>
+                <li><a href=""><span class="icon-album-deleted"></span><asp:Label CssClass="artistR" text="Ventas" runat="server" ID="Ventas" ForeColor="#E2E2E2"></asp:Label></a></li>
+                <li><a href=""><span class="icon-album-deleted"></span><asp:Label CssClass="artistR" text="Compras" runat="server" ID="Compras" ForeColor="#E2E2E2"></asp:Label></a></li>
+                <li><a href=""><span class="icon-album-deleted"></span><asp:Label CssClass="artistR" text="Facturación" runat="server" ID="Facturacion" ForeColor="#E2E2E2"></asp:Label></a></li>
+                <li><a href=""><span class="icon-user"></span><asp:Label CssClass="artistR" text="Reclutamiento" runat="server" ID="Reclutamiento" ForeColor="#E2E2E2"></asp:Label></a></li>
+                <li><a href=""><span class="icon-album-deleted"></span><asp:Label CssClass="artistR" text="Flotas" runat="server" ID="Flotas" ForeColor="#E2E2E2"></asp:Label></a></li>
+                <li><a href=""><span class="icon-users"></span><asp:Label CssClass="artistR" text="Blog" runat="server" ID="Blog" ForeColor="#E2E2E2"></asp:Label></a></li>
+                
+                <!--
+                <li><a href="Inicio.aspx"><span class="icon-home3"></span>Inicio</a></li>
+                <li><a href="RegistrarArtista.aspx"><span class="icon-users"></span><asp:Label CssClass="artistR" text="Registrar Artista" runat="server" ID="tabArtista" ForeColor="#E2E2E2"></asp:Label></a></li>
+                <li><a href="NuevaLista.aspx"><span class="icon-file-play"></span>Nueva Lista</a></li>
+                <li><a href="MisListas.aspx"><span class="icon-file-music"></span>Mis Listas</a></li>
+                <li><a href="Login.aspx" id="logOut">Salir</a></li>
+                -->
+            </ul>                        
+        </div>
+        <div class="contenido abrir">
+            <a href="#"><span class="icon-menu"></span></a>
+            <div>
+                <form id="form1" runat="server">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        <!--diseños de paginas -->
+                    </asp:ContentPlaceHolder>
+                </form>
+            </div>
+        </div>
+    <script src="Jq/abrir.js"></script>
+</body>
+</html>
