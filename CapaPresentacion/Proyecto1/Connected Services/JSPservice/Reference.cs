@@ -25,15 +25,6 @@ namespace Proyecto1.JSPservice {
         System.Threading.Tasks.Task<Proyecto1.JSPservice.LoginResponse> LoginAsync(Proyecto1.JSPservice.LoginRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Servicio/GestionAplicacion/RegistrarRequest", ReplyAction="http://Servicio/GestionAplicacion/RegistrarResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        Proyecto1.JSPservice.RegistrarResponse Registrar(Proyecto1.JSPservice.RegistrarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Servicio/GestionAplicacion/RegistrarRequest", ReplyAction="http://Servicio/GestionAplicacion/RegistrarResponse")]
-        System.Threading.Tasks.Task<Proyecto1.JSPservice.RegistrarResponse> RegistrarAsync(Proyecto1.JSPservice.RegistrarRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Servicio/GestionAplicacion/CrearUsuarioRequest", ReplyAction="http://Servicio/GestionAplicacion/CrearUsuarioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -43,6 +34,15 @@ namespace Proyecto1.JSPservice {
         System.Threading.Tasks.Task<Proyecto1.JSPservice.CrearUsuarioResponse> CrearUsuarioAsync(Proyecto1.JSPservice.CrearUsuarioRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Servicio/GestionAplicacion/RegistrarRequest", ReplyAction="http://Servicio/GestionAplicacion/RegistrarResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Proyecto1.JSPservice.RegistrarResponse Registrar(Proyecto1.JSPservice.RegistrarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Servicio/GestionAplicacion/RegistrarRequest", ReplyAction="http://Servicio/GestionAplicacion/RegistrarResponse")]
+        System.Threading.Tasks.Task<Proyecto1.JSPservice.RegistrarResponse> RegistrarAsync(Proyecto1.JSPservice.RegistrarRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Servicio/GestionAplicacion/ExisteUsuarioRequest", ReplyAction="http://Servicio/GestionAplicacion/ExisteUsuarioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -50,6 +50,15 @@ namespace Proyecto1.JSPservice {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Servicio/GestionAplicacion/ExisteUsuarioRequest", ReplyAction="http://Servicio/GestionAplicacion/ExisteUsuarioResponse")]
         System.Threading.Tasks.Task<Proyecto1.JSPservice.ExisteUsuarioResponse> ExisteUsuarioAsync(Proyecto1.JSPservice.ExisteUsuarioRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Servicio/GestionAplicacion/getDatosServiciosRequest", ReplyAction="http://Servicio/GestionAplicacion/getDatosServiciosResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        Proyecto1.JSPservice.getDatosServiciosResponse getDatosServicios(Proyecto1.JSPservice.getDatosServiciosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Servicio/GestionAplicacion/getDatosServiciosRequest", ReplyAction="http://Servicio/GestionAplicacion/getDatosServiciosResponse")]
+        System.Threading.Tasks.Task<Proyecto1.JSPservice.getDatosServiciosResponse> getDatosServiciosAsync(Proyecto1.JSPservice.getDatosServiciosRequest request);
     }
     
     /// <remarks/>
@@ -224,6 +233,108 @@ namespace Proyecto1.JSPservice {
         }
     }
     
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Servicio/")]
+    public partial class servicio : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int estadoField;
+        
+        private int idservicioField;
+        
+        private string mensajeField;
+        
+        private string nombreField;
+        
+        private double precioAnualField;
+        
+        private double precioMensualField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int estado {
+            get {
+                return this.estadoField;
+            }
+            set {
+                this.estadoField = value;
+                this.RaisePropertyChanged("estado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int idservicio {
+            get {
+                return this.idservicioField;
+            }
+            set {
+                this.idservicioField = value;
+                this.RaisePropertyChanged("idservicio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string mensaje {
+            get {
+                return this.mensajeField;
+            }
+            set {
+                this.mensajeField = value;
+                this.RaisePropertyChanged("mensaje");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string nombre {
+            get {
+                return this.nombreField;
+            }
+            set {
+                this.nombreField = value;
+                this.RaisePropertyChanged("nombre");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public double precioAnual {
+            get {
+                return this.precioAnualField;
+            }
+            set {
+                this.precioAnualField = value;
+                this.RaisePropertyChanged("precioAnual");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public double precioMensual {
+            get {
+                return this.precioMensualField;
+            }
+            set {
+                this.precioMensualField = value;
+                this.RaisePropertyChanged("precioMensual");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -261,57 +372,6 @@ namespace Proyecto1.JSPservice {
         }
         
         public LoginResponse(Proyecto1.JSPservice.cuenta @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="Registrar", WrapperNamespace="http://Servicio/", IsWrapped=true)]
-    public partial class RegistrarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Servicio/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string nombre;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Servicio/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string usuario;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Servicio/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string email;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Servicio/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string clave;
-        
-        public RegistrarRequest() {
-        }
-        
-        public RegistrarRequest(string nombre, string usuario, string email, string clave) {
-            this.nombre = nombre;
-            this.usuario = usuario;
-            this.email = email;
-            this.clave = clave;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RegistrarResponse", WrapperNamespace="http://Servicio/", IsWrapped=true)]
-    public partial class RegistrarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Servicio/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public bool @return;
-        
-        public RegistrarResponse() {
-        }
-        
-        public RegistrarResponse(bool @return) {
             this.@return = @return;
         }
     }
@@ -370,6 +430,57 @@ namespace Proyecto1.JSPservice {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Registrar", WrapperNamespace="http://Servicio/", IsWrapped=true)]
+    public partial class RegistrarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Servicio/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string nombre;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Servicio/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string usuario;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Servicio/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Servicio/", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string clave;
+        
+        public RegistrarRequest() {
+        }
+        
+        public RegistrarRequest(string nombre, string usuario, string email, string clave) {
+            this.nombre = nombre;
+            this.usuario = usuario;
+            this.email = email;
+            this.clave = clave;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RegistrarResponse", WrapperNamespace="http://Servicio/", IsWrapped=true)]
+    public partial class RegistrarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Servicio/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool @return;
+        
+        public RegistrarResponse() {
+        }
+        
+        public RegistrarResponse(bool @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="ExisteUsuario", WrapperNamespace="http://Servicio/", IsWrapped=true)]
     public partial class ExisteUsuarioRequest {
         
@@ -399,6 +510,34 @@ namespace Proyecto1.JSPservice {
         }
         
         public ExisteUsuarioResponse(bool @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getDatosServicios", WrapperNamespace="http://Servicio/", IsWrapped=true)]
+    public partial class getDatosServiciosRequest {
+        
+        public getDatosServiciosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getDatosServiciosResponse", WrapperNamespace="http://Servicio/", IsWrapped=true)]
+    public partial class getDatosServiciosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Servicio/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public Proyecto1.JSPservice.servicio[] @return;
+        
+        public getDatosServiciosResponse() {
+        }
+        
+        public getDatosServiciosResponse(Proyecto1.JSPservice.servicio[] @return) {
             this.@return = @return;
         }
     }
@@ -456,35 +595,6 @@ namespace Proyecto1.JSPservice {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Proyecto1.JSPservice.RegistrarResponse Proyecto1.JSPservice.GestionAplicacion.Registrar(Proyecto1.JSPservice.RegistrarRequest request) {
-            return base.Channel.Registrar(request);
-        }
-        
-        public bool Registrar(string nombre, string usuario, string email, string clave) {
-            Proyecto1.JSPservice.RegistrarRequest inValue = new Proyecto1.JSPservice.RegistrarRequest();
-            inValue.nombre = nombre;
-            inValue.usuario = usuario;
-            inValue.email = email;
-            inValue.clave = clave;
-            Proyecto1.JSPservice.RegistrarResponse retVal = ((Proyecto1.JSPservice.GestionAplicacion)(this)).Registrar(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Proyecto1.JSPservice.RegistrarResponse> Proyecto1.JSPservice.GestionAplicacion.RegistrarAsync(Proyecto1.JSPservice.RegistrarRequest request) {
-            return base.Channel.RegistrarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<Proyecto1.JSPservice.RegistrarResponse> RegistrarAsync(string nombre, string usuario, string email, string clave) {
-            Proyecto1.JSPservice.RegistrarRequest inValue = new Proyecto1.JSPservice.RegistrarRequest();
-            inValue.nombre = nombre;
-            inValue.usuario = usuario;
-            inValue.email = email;
-            inValue.clave = clave;
-            return ((Proyecto1.JSPservice.GestionAplicacion)(this)).RegistrarAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Proyecto1.JSPservice.CrearUsuarioResponse Proyecto1.JSPservice.GestionAplicacion.CrearUsuario(Proyecto1.JSPservice.CrearUsuarioRequest request) {
             return base.Channel.CrearUsuario(request);
         }
@@ -514,6 +624,35 @@ namespace Proyecto1.JSPservice {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto1.JSPservice.RegistrarResponse Proyecto1.JSPservice.GestionAplicacion.Registrar(Proyecto1.JSPservice.RegistrarRequest request) {
+            return base.Channel.Registrar(request);
+        }
+        
+        public bool Registrar(string nombre, string usuario, string email, string clave) {
+            Proyecto1.JSPservice.RegistrarRequest inValue = new Proyecto1.JSPservice.RegistrarRequest();
+            inValue.nombre = nombre;
+            inValue.usuario = usuario;
+            inValue.email = email;
+            inValue.clave = clave;
+            Proyecto1.JSPservice.RegistrarResponse retVal = ((Proyecto1.JSPservice.GestionAplicacion)(this)).Registrar(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto1.JSPservice.RegistrarResponse> Proyecto1.JSPservice.GestionAplicacion.RegistrarAsync(Proyecto1.JSPservice.RegistrarRequest request) {
+            return base.Channel.RegistrarAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto1.JSPservice.RegistrarResponse> RegistrarAsync(string nombre, string usuario, string email, string clave) {
+            Proyecto1.JSPservice.RegistrarRequest inValue = new Proyecto1.JSPservice.RegistrarRequest();
+            inValue.nombre = nombre;
+            inValue.usuario = usuario;
+            inValue.email = email;
+            inValue.clave = clave;
+            return ((Proyecto1.JSPservice.GestionAplicacion)(this)).RegistrarAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Proyecto1.JSPservice.ExisteUsuarioResponse Proyecto1.JSPservice.GestionAplicacion.ExisteUsuario(Proyecto1.JSPservice.ExisteUsuarioRequest request) {
             return base.Channel.ExisteUsuario(request);
         }
@@ -534,6 +673,27 @@ namespace Proyecto1.JSPservice {
             Proyecto1.JSPservice.ExisteUsuarioRequest inValue = new Proyecto1.JSPservice.ExisteUsuarioRequest();
             inValue.usuario = usuario;
             return ((Proyecto1.JSPservice.GestionAplicacion)(this)).ExisteUsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto1.JSPservice.getDatosServiciosResponse Proyecto1.JSPservice.GestionAplicacion.getDatosServicios(Proyecto1.JSPservice.getDatosServiciosRequest request) {
+            return base.Channel.getDatosServicios(request);
+        }
+        
+        public Proyecto1.JSPservice.servicio[] getDatosServicios() {
+            Proyecto1.JSPservice.getDatosServiciosRequest inValue = new Proyecto1.JSPservice.getDatosServiciosRequest();
+            Proyecto1.JSPservice.getDatosServiciosResponse retVal = ((Proyecto1.JSPservice.GestionAplicacion)(this)).getDatosServicios(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Proyecto1.JSPservice.getDatosServiciosResponse> Proyecto1.JSPservice.GestionAplicacion.getDatosServiciosAsync(Proyecto1.JSPservice.getDatosServiciosRequest request) {
+            return base.Channel.getDatosServiciosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto1.JSPservice.getDatosServiciosResponse> getDatosServiciosAsync() {
+            Proyecto1.JSPservice.getDatosServiciosRequest inValue = new Proyecto1.JSPservice.getDatosServiciosRequest();
+            return ((Proyecto1.JSPservice.GestionAplicacion)(this)).getDatosServiciosAsync(inValue);
         }
     }
 }

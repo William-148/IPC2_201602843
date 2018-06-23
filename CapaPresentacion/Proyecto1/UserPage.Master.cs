@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Proyecto1
 {
-    public partial class Inicio : System.Web.UI.Page
+    public partial class UserPage : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

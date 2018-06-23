@@ -1,8 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPage.Master" AutoEventWireup="true" CodeBehind="CrearGeneroM.aspx.cs" Inherits="Proyecto1.CrearGeneroM" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPage.Master" AutoEventWireup="true" CodeBehind="Tienda.aspx.cs" Inherits="Proyecto1.Tienda1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="formulario">
+    
+
+<div class="formulario">
         
 
         <table border="0">
@@ -24,8 +26,8 @@
                     <asp:Label CssClass="artistR" text="Q.150.00 /anual " runat="server" ID="inventarioPA"  ForeColor="Black" Font-Size="Small"></asp:Label>
 
                 </td>
-                <td class="columna" > <asp:CheckBox ID="ckInventario" runat="server" Width="80" /> </td>
-
+                <td class="columna" > <asp:CheckBox ID="ckInventario" runat="server" Width="80"  /> </td>
+                
                  <!-- Columna 2 -->
                 <td class="columna">
                     <asp:Label CssClass="artistR" text="Ventas" runat="server" ID="ventas" BackColor="#1a224d" ForeColor="White" Font-Size="Large" Font-Bold="False" Width="150px"></asp:Label><br/>
@@ -33,7 +35,7 @@
                     <asp:Label CssClass="artistR" text="Q.150.00 /anual " runat="server" ID="ventasPA"  ForeColor="Black" Font-Size="Small"></asp:Label>
 
                 </td>
-                <td class="columna"> <asp:CheckBox ID="ckVentas" runat="server" Width="80"/> </td>
+                <td class="columna"> <asp:CheckBox ID="ckVentas" runat="server" Width="80" /> </td>
 
                 <!-- Columna 3 -->
                 <td class="columna">
@@ -81,8 +83,8 @@
                     <table border="0">
                         <tr>
                             <td class="columna" colspan="2">
-                                <asp:Button ID="btnMensual" runat="server" Text="Mensual" Width="80px" />
-                                <asp:Button ID="btnAnual" runat="server" Text="Anual" Width="80px"/>
+                                <asp:Button ID="btnMensual" runat="server" Text="Mensual" Width="80px" OnClick="btnMensual_Click" />
+                                <asp:Button ID="btnAnual" runat="server" Text="Anual" Width="80px" OnClick="btnAnual_Click"/>
                             </td>
                         </tr>
 
@@ -92,7 +94,7 @@
                             </td>
 
                             <td class="columna" >
-                                <asp:Label  Text="Q.100.00" runat="server" ID="usuarioTotal" CssClass="formulario-Titulo"  Width="100px"></asp:Label>
+                                <asp:Label  Text="Q.0.00" runat="server" ID="usuarioTotal" CssClass="formulario-Titulo"  Width="100px"></asp:Label>
                             </td>
                         </tr>
 
@@ -102,7 +104,7 @@
                             </td>
 
                             <td class="columna" >
-                                <asp:Label  Text="Q.100.00" runat="server" ID="appTotal" CssClass="formulario-Titulo"  Width="100px"></asp:Label>
+                                <asp:Label  Text="Q.0.00" runat="server" ID="appTotal" CssClass="formulario-Titulo"  Width="100px"></asp:Label>
                             </td>
                         </tr>
 
@@ -112,19 +114,21 @@
                             </td>
 
                             <td class="columna" >
-                                <asp:Label  Text="Q.100.00" runat="server" ID="Total" CssClass="formulario-Titulo"  Width="100px"></asp:Label>
+                                <asp:Label  Text="Q.0.00" runat="server" ID="TotalNeto" CssClass="formulario-Titulo"  Width="100px"></asp:Label>
                             </td>
                         </tr>
 
                         <tr>
                             <td class="columna" colspan="2">
-                                <asp:Button ID="aceptarCompra" runat="server" Text="Comprar" Width="80px" />
+                                <asp:Button ID="aceptarCompra" runat="server" Text="Comprar" Width="80px" OnClick="aceptarCompra_Click" />
                             </td>
                         </tr>
                          
 
-                    </table>
+                        <asp:TextBox ID="numeroUsuarios" runat="server" TextMode="Number" Width="50">0</asp:TextBox>
+                        <asp:Label ID="Label1" runat="server" Text="    Usuarios"></asp:Label>
 
+                    </table>
 
                    
                 </td>
@@ -171,7 +175,7 @@
                     <asp:Label CssClass="artistR" text="Q.150.00 /anual " runat="server" ID="usuarioPA"  ForeColor="Black" Font-Size="Small"></asp:Label>
 
                 </td>
-                <td class="columna" > <asp:CheckBox ID="usuarioA" runat="server" Width="80" /> </td>
+                <td class="columna" >  </td>
 
                 
             </tr>
@@ -180,16 +184,15 @@
             <!-- botones de aceptar-->
             <tr class="piepagina">
                 <td class="titulo" colspan="6">
-                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar Servicio" OnClick="btnAceptar_Click"/>
-                    <asp:Button ID="btmQuitar" runat="server" text="Quitar Servicio" OnClick="btnCancelar_Click" />
+                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar Servicio"  />
+                    <asp:Button ID="btmQuitar" runat="server" text="Quitar Servicio"  />
                 </td>
             </tr>
 
         </table>
 
     </div>
-    
 
-    
+
 
 </asp:Content>

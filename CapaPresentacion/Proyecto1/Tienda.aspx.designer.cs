@@ -10,7 +10,7 @@
 namespace Proyecto1 {
     
     
-    public partial class CrearGeneroM {
+    public partial class Tienda1 {
         
         /// <summary>
         /// Control formTitle.
@@ -301,13 +301,13 @@ namespace Proyecto1 {
         protected global::System.Web.UI.WebControls.Label totalTitulo;
         
         /// <summary>
-        /// Control Total.
+        /// Control TotalNeto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Total;
+        protected global::System.Web.UI.WebControls.Label TotalNeto;
         
         /// <summary>
         /// Control aceptarCompra.
@@ -317,6 +317,24 @@ namespace Proyecto1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button aceptarCompra;
+        
+        /// <summary>
+        /// Control numeroUsuarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox numeroUsuarios;
+        
+        /// <summary>
+        /// Control Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// Control blog.
@@ -452,15 +470,6 @@ namespace Proyecto1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label usuarioPA;
-        
-        /// <summary>
-        /// Control usuarioA.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox usuarioA;
         
         /// <summary>
         /// Control btnAgregar.

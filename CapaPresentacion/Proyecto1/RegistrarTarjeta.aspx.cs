@@ -7,16 +7,13 @@ using System.Web.UI.WebControls;
 
 namespace Proyecto1
 {
-    public partial class AdminPage : System.Web.UI.MasterPage
+    public partial class RegistrarTarjeta : System.Web.UI.Page
     {
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            JSPservice.cuenta usuario = (JSPservice.cuenta) Session["Login"];
-            NombreUsuario.Text = usuario.nombre ;
-            
-            
 
         }
+
+       
     }
 }

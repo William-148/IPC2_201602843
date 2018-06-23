@@ -11,17 +11,17 @@
   <message name="LoginResponse">
     <part name="parameters" element="tns:LoginResponse" />
   </message>
-  <message name="Registrar">
-    <part name="parameters" element="tns:Registrar" />
-  </message>
-  <message name="RegistrarResponse">
-    <part name="parameters" element="tns:RegistrarResponse" />
-  </message>
   <message name="CrearUsuario">
     <part name="parameters" element="tns:CrearUsuario" />
   </message>
   <message name="CrearUsuarioResponse">
     <part name="parameters" element="tns:CrearUsuarioResponse" />
+  </message>
+  <message name="Registrar">
+    <part name="parameters" element="tns:Registrar" />
+  </message>
+  <message name="RegistrarResponse">
+    <part name="parameters" element="tns:RegistrarResponse" />
   </message>
   <message name="ExisteUsuario">
     <part name="parameters" element="tns:ExisteUsuario" />
@@ -29,22 +29,32 @@
   <message name="ExisteUsuarioResponse">
     <part name="parameters" element="tns:ExisteUsuarioResponse" />
   </message>
+  <message name="getDatosServicios">
+    <part name="parameters" element="tns:getDatosServicios" />
+  </message>
+  <message name="getDatosServiciosResponse">
+    <part name="parameters" element="tns:getDatosServiciosResponse" />
+  </message>
   <portType name="GestionAplicacion">
     <operation name="Login">
       <input wsam:Action="http://Servicio/GestionAplicacion/LoginRequest" message="tns:Login" />
       <output wsam:Action="http://Servicio/GestionAplicacion/LoginResponse" message="tns:LoginResponse" />
     </operation>
-    <operation name="Registrar">
-      <input wsam:Action="http://Servicio/GestionAplicacion/RegistrarRequest" message="tns:Registrar" />
-      <output wsam:Action="http://Servicio/GestionAplicacion/RegistrarResponse" message="tns:RegistrarResponse" />
-    </operation>
     <operation name="CrearUsuario">
       <input wsam:Action="http://Servicio/GestionAplicacion/CrearUsuarioRequest" message="tns:CrearUsuario" />
       <output wsam:Action="http://Servicio/GestionAplicacion/CrearUsuarioResponse" message="tns:CrearUsuarioResponse" />
     </operation>
+    <operation name="Registrar">
+      <input wsam:Action="http://Servicio/GestionAplicacion/RegistrarRequest" message="tns:Registrar" />
+      <output wsam:Action="http://Servicio/GestionAplicacion/RegistrarResponse" message="tns:RegistrarResponse" />
+    </operation>
     <operation name="ExisteUsuario">
       <input wsam:Action="http://Servicio/GestionAplicacion/ExisteUsuarioRequest" message="tns:ExisteUsuario" />
       <output wsam:Action="http://Servicio/GestionAplicacion/ExisteUsuarioResponse" message="tns:ExisteUsuarioResponse" />
+    </operation>
+    <operation name="getDatosServicios">
+      <input wsam:Action="http://Servicio/GestionAplicacion/getDatosServiciosRequest" message="tns:getDatosServicios" />
+      <output wsam:Action="http://Servicio/GestionAplicacion/getDatosServiciosResponse" message="tns:getDatosServiciosResponse" />
     </operation>
   </portType>
   <binding name="GestionAplicacionPortBinding" type="tns:GestionAplicacion">
@@ -58,15 +68,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="Registrar">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="CrearUsuario">
       <soap:operation soapAction="" />
       <input>
@@ -76,7 +77,25 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="Registrar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="ExisteUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getDatosServicios">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

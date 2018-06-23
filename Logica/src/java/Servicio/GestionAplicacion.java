@@ -6,6 +6,9 @@
 package Servicio;
 
 import Logica.Cuenta;
+import Logica.Servicio;
+import Logica.ServicioDAO;
+import java.util.ArrayList;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -60,5 +63,18 @@ public class GestionAplicacion {
         boolean flag  = Cuenta.existUser(usuario);
         return flag;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getDatosServicios")
+    public ArrayList<Servicio> getDatosServicios() {
+        //TODO write your implementation code here:
+        ServicioDAO nuevo = new ServicioDAO();
+        
+        ArrayList<Servicio> lista = nuevo.getServicios();
+        return lista;
+    }
+  
 
 }

@@ -29,14 +29,15 @@ namespace Proyecto1
                    
             if (usuario.idCuenta != 0 )
             {
+
+                Session["Login"] = usuario;
                 if (usuario.tipo == AdminSistema)
                 {
-
+                    
                 }
                 else if(usuario.tipo == AdminServicio)
                 {
-                    AdminPage.nomUser = usuario.nombre;
-                    Response.Redirect("Administrador/Tienda.aspx");
+                    Response.Redirect("Tienda.aspx");
 
                 }
                 else if(usuario.tipo == CUsuario)
